@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl">
+    <head>
+        <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+        <meta name="description" content="A fun platformer filled with innocent joy">
+        <meta name="keywords" content="conspiracy, flat earth, hollow earth, Ma'at, global warming, 5G, pandemic, moon hoax, cernunnos, higgs-boson">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
+        <meta name="googlebot" content="notranslate">
+        <title>Conspiracy Maze</title>
+        <link rel="stylesheet" href="css.css">
+    </head>
+    
+    <body onload="setScene()">
+        <main>
+            <div id="playfield-container">
+                <canvas id="playfield">amazing maze game which you apparantly can't render</canvas>
+                <div id="audio-overlay">
+                    <div id="muted"></div>
+                    <div id="unmuted"></div>
+                </div>
+            </div>
+            <div id="manual">
+                <div id="text">
+                    <h1>conspiracy maze</h1>
+                    <p>Use the arrow keys to navigate through the labyrinthine conspiracy that envelops the entire globe!<br>Press '<span style="font-variant: small-caps;">m</span>' to mute all audio.</p>
+                    <p>All mazes have been procedurally generated: reload the page to get brand new ones. If you ever get stuk or simply want to play around, you can always use the buttons in the cheat menu.</p>
+
+                    <p><span id="note">note</span>: the page is pseudo-reactive. If you resize the screen during gameplay, you may need to reload to have the canvas recalculate.
+                    Background images generated with DALL-E 2 & modified by <a href="https://www.instagram.com/pecten__/" target="_blank" style="font-variant: small-caps;">pecten</a>.</p>
+                </div>
+                <div id="cheatmenu">
+                    <h2>cheat menu</h2>
+                    <div id="trueMenu">
+                        <button id="unstuckButton">unstuck<br>player</button>
+                        <button id="regenButton">regen<br>maze</button>
+                        <p>level selector</p>
+                        <div id="levelSelector"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile_fallback">Unfortunately this page is not supported on mobile.</div>
+        </main>
+        <footer>
+            <button id="returnbutton" onclick="location.href='http://www.planetegem.be'" type="button">
+                <img id="return">
+                <h4>return&nbsp;to<br>planetegem</h4>
+            </button>
+            <p>&#169; 2022 Niels Van Damme | info@planetegem.be | <a href="https://www.instagram.com/planetegem/" style="text-decoration:none;color:black;">www.instagram.com/planetegem</a> <br> &#9825; <a href="http://www.pecten.be" target="_blank" style="text-decoration:none;color:black;">www.pecten.be</a> &#9825;</p>
+        </footer>
+        
+        <script src="js/repainters.js"></script>
+        <script src="js/commons.js"></script>
+        <script src="js/drawFunctions.js"></script>
+        <script src="js/playerSkins.js"></script>
+        <script src="js/mazeGenerators.js"></script>
+        <script src="js/animations.js"></script>
+        <script src="js/keymaps.js"></script>
+        <script src="js/levels.js"></script>
+        <script src="js/loadAndStart.js"></script>
+        <script src="js/audio.js"></script>
+    </body>

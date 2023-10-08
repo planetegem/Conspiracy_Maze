@@ -1,0 +1,222 @@
+:root {
+    --standardSize: 80vh;
+    --font: 2vh;
+    --border: 1vh;
+}
+main {
+    margin-top: 2vh;
+}
+#playfield-container {
+    display: block;
+    width: calc(var(--standardSize) + 2vh);
+    height: calc(var(--standardSize) + 2vh);
+    margin: 0 auto;
+    background-color: black;
+    position: relative;
+}
+#playfield {
+    width: var(--standardSize);
+    height: var(--standardSize);
+    border: solid var(--border) black;
+    box-sizing: content-box;
+    z-index: 2;
+}
+#audio-overlay {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    margin: auto;
+    height: calc(var(--standardSize)*0.15);
+    width: calc(var(--standardSize)*0.15);
+    z-index: -1;
+    opacity: 0;
+}
+#muted {
+    background-image: url("assets/menu/mute.svg");
+    width: 100%;
+    height: 100%;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position: center center;
+    display: none;
+}
+#unmuted {
+    background-image: url("assets/menu/unmute.svg");
+    width: 100%;
+    height: 100%;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position: center center;
+    display: none;
+}
+@keyframes audioControls {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+
+/* SUBMENU */
+#manual {
+    width: var(--standardSize);
+    margin: auto;
+    font-family: Verdana sans-serif;
+    font-size: var(--font);
+    display: grid;
+    grid-template-columns: repeat(10, calc(var(--standardSize)*0.1));
+}
+#manual h1 {
+    font-size: 1.5em;
+    font-variant: small-caps;
+    text-align: justify;
+    margin-left: 1em;
+    margin-bottom: 0.1em;
+}
+#manual p {
+    font-size: 0.9em;
+    text-align: justify;
+}
+#text {
+    grid-column: 1 / 7;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+#note {
+    text-decoration: underline;
+}
+#cheatmenu {
+    grid-column: 7 / 10;
+    margin-top: 1em; margin-bottom: auto;
+}
+#cheatmenu h2 {
+    width: 100%;
+    font-variant: small-caps;
+    font-size: 1.2em;
+    grid-column: 1 / 3;
+    color: #5c5c5c;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+#trueMenu {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+}
+#unstuckButton, #regenButton{
+    font-size: 0.8em;
+    height: 3.5em;
+    width: 5em;
+    border: solid 1px #5c5c5c;
+    padding: 0;
+    border-radius: 3px;
+    font-variant: small-caps;
+    box-sizing: border-box;
+}
+#unstuckButton {
+    margin-left: auto;
+    margin-right: 0.5em;
+}
+#regenButton {
+    margin-left: 0.5em;
+    margin-right: auto;
+}
+#unstuckButton:hover, #regenButton:hover {
+    border: solid 2px #5c5c5c;
+    background-color: #e8e8e8;
+}
+#unstuckButton:active, #regenButton:active {
+    border: solid 2px #5c5c5c;
+    background-color: #f3f3f3;
+}
+#trueMenu p {
+    text-align: center;
+    grid-column: 1 / 3;
+    font-variant: small-caps;
+    color: #5c5c5c;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+#levelSelector {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
+    margin-left: 2.1em; margin-right: 2.1em;
+}
+.cheatButton {
+    font-size: 0.8em;
+    margin: auto auto 0.2em;
+    width: 2em;
+    padding: 0;
+    text-align: center;
+    text-align: small-caps;
+}
+#mobile_fallback {
+    text-align: center;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+    font-variant: small-caps;
+    color: #5c5c5c;
+    font-size: var(--font);
+}
+
+
+/* FOOTER */
+
+footer {
+    font-size: var(--font);
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+footer p {
+    font-size: 0.65em;
+    text-align:center;
+    font-family: Georgia sans-serif;
+}
+#returnbutton {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    opacity: 0.75;
+    font-size: 0.8em;
+}
+#returnbutton h4 {
+    text-align: left;
+    margin: 0;
+    font-variant: small-caps;
+    margin-left: 0.2em;
+}
+#return {
+    background-image: url("/images/returngrey.svg");
+    width: 6em;
+    height: 3em;
+    background-repeat:no-repeat;
+    background-size:contain;
+}
+#returnbutton:hover {
+    color: #7D1E2D;
+    border-color: #7D1E2D20;
+}
+#returnbutton:hover #return {
+    background-image: url("/images/return.svg");
+}
+
+#mobile_fallback {
+    display: none;
+}
+@media only screen and (max-width:600px) {
+    #mobile_fallback {
+        display: block;
+    }
+    #playfield-container, #manual {
+        display:none;
+    }
+}
